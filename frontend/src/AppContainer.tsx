@@ -11,7 +11,7 @@ export interface Seminars {
     photo: string
 }
 
-const AppContainer = () => {
+const AppContainer = () => { // Functional компонент для выполнения основной логики
 
     const [seminars, setSeminars] = React.useState<Seminars[]>([])
     const [message, setMessage] = React.useState<{message: string, type: string}>({})
