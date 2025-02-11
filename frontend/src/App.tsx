@@ -10,7 +10,7 @@ interface AppProps {
   deleteSeminar: (id: number) => void
 }
 
-function App({message, seminars, editSeminar, deleteSeminar}): React.FC<AppProps> {
+function App({message, seminars, editSeminar, deleteSeminar}): React.FC<AppProps> { // Dumb компонент для отрисовки
 
   const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);
   const [isEditOpen, setIsEditOpen] = React.useState(false);
