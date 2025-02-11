@@ -1,0 +1,188 @@
+$main-color: #fa6400;
+$hover-color: #fb8332;
+$active-color: #c85000;
+$font-family-primary: 'Montserrat', sans-serif, Arial;
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../public/fonts/Montserrat-Regular.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url("../public/fonts/Montserrat-SemiBold.ttf");
+    font-weight: 700;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url("../public/fonts/Montserrat-Light.ttf");
+    font-weight: 300;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family-primary;
+}
+
+body {
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 12px 24px;
+    margin: auto;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    &.success {
+        background-color: green;
+    }
+    &.error {
+        background-color: red;
+    }
+}
+
+.seminars {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    &__title {
+        font-weight: 700;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    &__description {
+        font-weight: 500;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    &__date-wrapper {
+        display: grid;
+        grid-template-columns: min-content min-content;
+        column-gap: 10px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #666;
+    }
+
+    &__photo {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+}
+
+.button-wrapper {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+// Кнопки
+.btn {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: $main-color;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+
+    &:hover,
+    &:focus {
+        background-color: $hover-color;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        background-color: $active-color;
+        box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+        transform: translateY(0);
+    }
+
+    &_reverse {
+        background-color: transparent;
+        border: 1px solid $main-color;
+        color: $main-color;
+
+        &:hover,
+        &:focus {
+            background-color: $main-color;
+            color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+        }
+
+        &:active {
+            background-color: $active-color;
+            color: #fff;
+            box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+            color: #7979790e;
+        }
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    background-color: #f5f5f5;
+    color: $main-color;
+    padding: 12px 12px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 10px 20px -18px;
+    margin-bottom: 15px;
+  
+    &:focus {
+        border-bottom: 2px solid $active-color;
+        border-radius: 4px 4px 2px 2px;
+    }
+    
+    &:hover {
+        outline: 1px solid $hover-color;
+    }
+}
